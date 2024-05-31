@@ -1,0 +1,11 @@
+body{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    background: -webkit-linear-gradient(left, #4c45b2, #424efa);
+}
+
+.actions{
+    color: black;
+    left: 100px;
+}
