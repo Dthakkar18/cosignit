@@ -5,7 +5,89 @@ body{
     background: -webkit-linear-gradient(left, #4c45b2, #424efa);
 }
 
-.actions{
-    color: black;
-    left: 100px;
+#user_div{
+    position: absolute;
+    left: 20px; 
+    top: 20px;
+    width: 400px;
+    height: 100px;
+}
+#user_header{
+    font-weight: 300;
+    color: wheat;
+    width: 400px;
+    height: 70px;
+}
+#user_span{
+    font-weight: 400;
+    width: 350px;
+    height: 60px;
+    background-color: rgb(60, 60, 165);
+}
+
+#actions_div{
+    position: relative;
+    height: 450px;
+    width: 800px;
+    top: 150px;
+    left: 255px;
+    background-color: rgb(60, 60, 165);
+    border-radius: 20px;
+}
+
+#logout_div{
+    position: relative;
+    top: 10px;
+    left: 1240px;
+    width: 50px;
+}
+
+#create_ticket_div{
+    position: relative;
+    top: 100px;
+    left: 80px;
+    width: 200px;
+}
+#sales_div{
+    position: relative;
+    top: 200px;
+    left: 80px;
+    width: 200px;
+}
+#inventory_div{
+    position: relative;
+    bottom: 54px;
+    left: 530px;
+    width: 200px;
+}
+#pending_tickets_div{
+    position: relative;
+    top: 44px;
+    left: 530px;
+    width: 200px;
+}
+
+#create_ticket_btn{
+    font-weight: 100;
+    width: 200px;
+    height: 70px;
+    padding-top: 20px;
+}
+#sales_btn{
+    font-weight: 100;
+    width: 200px;
+    height: 70px;
+    padding-top: 20px;
+}
+#inventory_btn{
+    font-weight: 100;
+    width: 200px;
+    height: 70px;
+    padding-top: 20px;
+}
+#pending_tickets_btn{
+    font-weight: 100;
+    width: 200px;
+    height: 70px;
+    padding-top: 20px;
 }

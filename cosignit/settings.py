@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    #'daphne',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'myapp',
+    #"reactpy_django",
 ]
 
 MIDDLEWARE = [
@@ -130,3 +132,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # when doing authentication it will check our Member model instead of the default User model (which we aren't using) 
 #AUTH_USER_MODEL = 'myapp.Member'
+
+# for reactpy stuff
+#ASGI_APPLICATION = "cosignit.asgi.application"

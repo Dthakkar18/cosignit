@@ -16,10 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from myapp.views import login_signup
+from myapp.views import login_signup, logout_user
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    #path("reactpy/", include("reactpy_django.http.urls")),
     path('myapp/', include('myapp.urls')),
-    path('', login_signup)
+    path('', login_signup),
+    path("logout", logout_user, name="logout_view")
 ]

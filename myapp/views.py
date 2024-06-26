@@ -4,6 +4,8 @@ from django.contrib.auth.decorators import login_required
 from django.views import generic
 from json import dumps
 from .models import Member
+from django.contrib.auth.models import User
+
 
 # Create your views here.
 
@@ -14,10 +16,10 @@ def login_signup(request):
         if request.POST.get("Signup"): # if signup button
             firstName = request.POST.get("First_Name")
             lastName = request.POST.get("Last_Name")
+            username = request.POST.get("Username")
             email = request.POST.get("Email_Address")
             password = request.POST.get("Password")
             confirm_password = request.POST.get("Confirm_password")
-            date = request.POST.get("date")
             # check password length
             if len(password) < 10:
                 context = {
@@ -34,8 +36,9 @@ def login_signup(request):
                 return render(request, "myapp/login.html", context)
             # check if email is being reused
             try:
-                member = Member.objects.get(email=email)
-                if member:
+                user = User.objects.get(email=email)
+                #member = Member.objects.get(email=email)
+                if user:
                     print("Email is already in use!")
                     context = {
                         'login_display': "Signup requirements not met!",
@@ -43,20 +46,53 @@ def login_signup(request):
                     }
                     return render(request, "myapp/login.html", context)
             except:
-                # means there isn't a member with the email provided
+                # means there isn't a user with the email provided
                 pass
-            # make the new Member
-            Member.objects.create(
+            # check if username is being reused
+            try:
+                user = User.objects.get(username=username)
+                #member = Member.objects.get(email=email)
+                if user:
+                    print("Email is already in use!")
+                    context = {
+                        'login_display': "Signup requirements not met!",
+                        'signup_display': "Account with email already exists!"
+                    }
+                    return render(request, "myapp/login.html", context)
+            except:
+                # means there isn't a user with the email provided
+                pass
+            # make the new user
+            User.objects.create(
+                fist_name = firstName,
+                last_name = lastName,
+                username = username,
+                email = email,
+                password = password
+            )
+
+            """Member.objects.create(
                 firstName = firstName,
                 lastName = lastName,
                 email = email,
                 password = password,
                 birthday = date
-            )
-            print("Created member: " + firstName + " " + lastName)
+            )"""
+            
+            print("Created user: " + firstName + " " + lastName)
         if request.POST.get("Login"): # if login button
-            email = request.POST.get("Email_Address")
+            username = request.POST.get("Username")
             password = request.POST.get("Password")
+            # authenticate user
+            user = authenticate(username=username, password=password)
+            if user is None:
+                context = {
+                    'login_display': "Incorrect email/password!"
+                }
+                return render(request, "myapp/login.html", context)
+            print(f"Authenticated user: {user}")
+
+            """
             # check if correct credentials
             try:
                 member = Member.objects.get(email=email)
@@ -70,17 +106,33 @@ def login_signup(request):
                 context = {
                         'login_display': "Incorrect email/password!"
                     }
-                return render(request, "myapp/login.html", context)
+                return render(request, "myapp/login.html", context)"""
+
+
             # login the member
-            print(member)
+            login(request, user=user)
+            # redirect to homepage
+            return redirect(home_page)
          
     
     # regular page endpoint
     return render(request, "myapp/login.html", {})
 
 # first sample view
+@login_required
 def home_page(request):
+    username = request.user.username
     context = {
-
+        "username": username
     }
     return render(request, "myapp/home_page.html", context)
+
+def logout_user(request):
+    logout(request)
+    print("user logged out")
+    return redirect(login_signup)
+
+# using reactpy 
+def reactpy_sample(request):
+    context={}
+    return render(request, "myapp/reactpy_basic.html", context)
