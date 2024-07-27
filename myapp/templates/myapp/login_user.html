@@ -29,11 +29,6 @@
             <div class="form-inner">
                <form action="#" class="login" method="post">
                   {% csrf_token %}
-                  <!-- won't use email for login rn
-                  <div class="field">
-                     <input type="text" placeholder="Email Address" name="Email_Address" required>
-                  </div>
-                  -->
                   <div class="field">
                      <input type="text" placeholder="Username" name="Username" required>
                   </div>
@@ -45,10 +40,10 @@
                   </div>
                   <div class="field btn">
                      <div class="btn-layer"></div>
-                     <input type="submit" value="Login" name="Login">
+                     <input type="submit" value="Login" name="Login_User">
                   </div>
-                  <div class="signup-link">
-                     Not a member? <a href="">Signup now</a>
+                  <div class="store-login-signup-link">
+                     Not a member? <a href="store/">Go to storefront</a>
                   </div>
                   <div class="fail">
                      <p style="text-align: center; padding-top: 10px; color: red;">{{ login_display }}</p>
@@ -74,16 +69,9 @@
                   <div class="field">
                      <input type="password" placeholder="Confirm password" name="Confirm_password" required>
                   </div>
-
-                  <!-- No date field for now
-                  <div class="field">
-                     <input type="date" name="date" required>
-                  </div>
-                  -->
-
                   <div class="field btn">
                      <div class="btn-layer"></div>
-                     <input type="submit" value="Signup" name="Signup">
+                     <input type="submit" value="Signup" name="Signup_User">
                   </div>
                   <div class="fail">
                      <p style="text-align: center; padding-top: 10px; color: red;">{{ signup_display }}</p>
@@ -97,7 +85,7 @@
          const loginForm = document.querySelector("form.login");
          const loginBtn = document.querySelector("label.login");
          const signupBtn = document.querySelector("label.signup");
-         const signupLink = document.querySelector("form .signup-link a");
+         //(not doing this as of rn) const signupLink = document.querySelector("form .signup-link a");
          signupBtn.onclick = (()=>{
            loginForm.style.marginLeft = "-50%";
            loginText.style.marginLeft = "-50%";

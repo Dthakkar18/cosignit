@@ -1,13 +1,11 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
 class Member(models.Model):
-    firstName = models.CharField(max_length=225)
-    lastName = models.CharField(max_length=225)
-    email = models.EmailField(max_length=225)
-    password = models.CharField(max_length=225)
-    birthday = models.DateField()
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
+    
 
     def __str__(self):
         return self.firstName + " " + self.lastName

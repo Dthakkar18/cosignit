@@ -1,0 +1,11 @@
+- have store name be the username for user model?
+- frontend and backend for:
+    - user create ticket
+    - user inventory
+    - user sales 
+    - user pending ticket
+    - username already taken for user sign up
+- change member model to have foreignkey with "ticket" model
+    - ticket model will hold fields for:
+        - status: active (approved and on sale), pending (waiting approval), sold (sold; should be useful for "sales" tab)
+        - shoe info (name, sku, blah blah)
