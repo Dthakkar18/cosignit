@@ -16,32 +16,36 @@
             <h1 id="user_header"><span id="user_span" class="badge badge-secondary">Welcome {{ username }}</span></h1>
         </div>
 
-        <div id="logout_div">
-            <a id="logout_btn" class="btn btn-danger" href="/logout" role="button">logout</a>
-        </div>
+        <div class="container">
+        
 
-        <div id="actions_div">
-            <!--Create ticket, sales, inventory, pending tickets-->
-            <!-- create divs here for each thing you want-->
-             <div id="create_ticket_div">
-                <h2>
-                    <a id="create_ticket_btn" class="btn btn-secondary btn-lg" href="#" role="button">Create ticket</a>
-                </h2>
+            <div id="actions_div">
+                <!--Create ticket, sales, inventory, pending tickets-->
+                <!-- create divs here for each thing you want-->
+                <div id="create_ticket_div">
+                    <h2>
+                        <a id="create_ticket_btn" class="btn btn-secondary btn-lg" href="#" role="button">Create ticket</a>
+                    </h2>
+                </div>
+                <div id="sales_div">
+                    <h2>
+                        <a id="sales_btn" class="btn btn-secondary btn-lg" href="#" role="button">Sales</a>
+                    </h2>
+                </div>
+                <div id="inventory_div">
+                    <h2>
+                        <a id="inventory_btn" class="btn btn-secondary btn-lg" href="#" role="button">Inventory</a>
+                    </h2>
+                </div>
+                <div id="pending_tickets_div">
+                    <h2>
+                        <a id="pending_tickets_btn" class="btn btn-secondary btn-lg" href="#" role="button">Pending tickets</a>
+                    </h2>
+                </div>
             </div>
-            <div id="sales_div">
-                <h2>
-                    <a id="sales_btn" class="btn btn-secondary btn-lg" href="#" role="button">Sales</a>
-                </h2>
-            </div>
-            <div id="inventory_div">
-                <h2>
-                    <a id="inventory_btn" class="btn btn-secondary btn-lg" href="#" role="button">Inventory</a>
-                </h2>
-            </div>
-            <div id="pending_tickets_div">
-                <h2>
-                    <a id="pending_tickets_btn" class="btn btn-secondary btn-lg" href="#" role="button">Pending tickets</a>
-                </h2>
+
+            <div id="logout_div">
+                <a id="logout_btn" class="btn btn-danger" href="/logout" role="button">logout</a>
             </div>
         </div>
         

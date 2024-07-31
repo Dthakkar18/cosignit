@@ -25,18 +25,47 @@ body{
     background-color: rgb(60, 60, 165);
 }
 
+.container {
+    width: 1000px;
+    height: 100px;
+    display: flex;
+    justify-content: flex-end;
+    /*background-color: cyan;*/
+}
+
+#logout_div{
+    width: 80px;
+    height: 40px;
+    display: inline-block;
+    margin: 2px;
+    position: relative;
+    left: 80px;
+    top: 20px;
+    /*background-color: green;*/
+    
+}
+
 #actions_div{
     position: relative;
     height: 450px;
     width: 800px;
-    top: 150px;
-    left: 255px;
     background-color: rgb(60, 60, 165);
     border-radius: 20px;
+    top: 200px;
+    left: 50px;
+    margin: auto;
 }
 
-#logout_div{
-    position: relative;
+#s{
+    position: absolute;
+    height: 450px;
+    width: 800px;
+    top: 150px;
+    right: 350px;
+    background-color: rgb(60, 60, 165);
+    border-radius: 20px;
+    margin: auto;
+
     top: 10px;
     left: 1240px;
     width: 50px;
